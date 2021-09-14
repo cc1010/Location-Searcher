@@ -4,17 +4,21 @@ import LocationsContainer from "./LocationsContainer";
 import auth_key from "../config";
 import "follow-redirects";
 import "fs";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 ///
 function Home() {
+	const [city, setCity] = useState([])
+	const [search, setSearch] = useState("")
+
+	
 	useEffect(() => {
 		fetch(
-			`https://api.roadgoat.com/api/v2/destinations/auto_complete?q=bryn_mawr_pa`,
+			`https://api.roadgoat.com/api/v2/destinations/auto_complete?q=New-York`, //${search}
 			{
 				method: "GET",
 				hostname: "api.roadgoat.com",
 				port: 80,
-				path: "/api/v2/destinations/auto_complete?q=barcelona",
+				path: `/api/v2/destinations/auto_complete?q=New-York`,  //${search}
 				headers: {
 					Authorization: `Basic ${auth_key}`,
 				},
@@ -22,14 +26,18 @@ function Home() {
 			}
 		)
 			.then((resp) => resp.json())
-			.then((data) => console.log(data));
-	}, []);
+			.then((data) => setCity(data));
+	}, [])
+	// [search] in array dependencies for active search but API will run out quickly.  Save for presentation
 
+
+// console.log(city.data)
+	console.log(city)
 	return (
 		<div>
 			<h3>Home Page</h3>
-			<SearchLocations />
-			<LocationsContainer />
+			<SearchLocations search={search} setSearch={setSearch} />
+			<LocationsContainer location={city} />
 		</div>
 	);
 }
