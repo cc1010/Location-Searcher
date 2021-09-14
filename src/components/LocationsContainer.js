@@ -1,27 +1,18 @@
 import HomeLocation from "./HomeLocation";
 
-function LocationsContainer({location}) {
-	const locationData = location.data
-	const locationPic = location.included
-	const cityPic = locationPic[0].attributes.image.medium
-	const cityData = locationData.map(city => {
-		return(
-			<div className="ui card eight wide column cityTile" key={city.id}>
-				<img src={cityPic} alt={city.attributes.name} />
-				<h3>{city.attributes.name}</h3>
-				<br></br>
-				Latitude :{city.attributes.latitude}
-				<br></br>
-				Longitude: {city.attributes.longitude} 
-			</div>
-		)
-	})
+function LocationsContainer({ location }) {
+	console.log(location);
 
-	console.log(location)
+	const dataList = Object.values(location);
+	const pictures = Object.values({ ...dataList[1] });
+	const info = Object.values({ ...dataList[0] });
+	// console.log(location)
 	return (
-		<div className="ui three stackable cards" >
-			{cityData}
+		<div className="App">
+			{info.map((item, index) => (
+				<HomeLocation key={index} place={item} pictures={pictures} />
+			))}
 		</div>
-	)
+	);
 }
 export default LocationsContainer;

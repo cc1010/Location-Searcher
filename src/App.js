@@ -13,14 +13,11 @@ function App() {
 			<Header />
 			<NavBar />
 			<Switch>
-				<Route path="/home">
+				<Route path="/">
 					<Home />
 				</Route>
 				<Route path="/bucketlist">
 					<BucketList />
-				</Route>
-				<Route exact path="/">
-					<h4>home-main</h4>
 				</Route>
 			</Switch>
 		</div>

@@ -7,18 +7,17 @@ import "fs";
 import { useEffect, useState } from "react";
 ///
 function Home() {
-	const [city, setCity] = useState([])
-	const [search, setSearch] = useState("")
+	const [city, setCity] = useState([]);
+	const [search, setSearch] = useState("");
 
-	
 	useEffect(() => {
 		fetch(
-			`https://api.roadgoat.com/api/v2/destinations/auto_complete?q=New-York`, //${search}
+			`https://api.roadgoat.com/api/v2/destinations/auto_complete?q=la`, //${search}
 			{
 				method: "GET",
 				hostname: "api.roadgoat.com",
 				port: 80,
-				path: `/api/v2/destinations/auto_complete?q=New-York`,  //${search}
+				path: `/api/v2/destinations/auto_complete?q=New-York`, //${search}
 				headers: {
 					Authorization: `Basic ${auth_key}`,
 				},
@@ -27,12 +26,11 @@ function Home() {
 		)
 			.then((resp) => resp.json())
 			.then((data) => setCity(data));
-	}, [])
+	}, []);
 	// [search] in array dependencies for active search but API will run out quickly.  Save for presentation
 
-
-// console.log(city.data)
-	console.log(city)
+	// console.log(city.data)
+	console.log(city);
 	return (
 		<div>
 			<h3>Home Page</h3>
