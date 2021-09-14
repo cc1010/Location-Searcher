@@ -2,7 +2,7 @@ import "./App.css";
 
 import { Switch, Route, Link } from "react-router-dom";
 /// componenets
-import Header from "./components/Header";
+import HeaderComp from "./components/HeaderComp";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import BucketList from "./components/BucketList";
@@ -10,14 +10,14 @@ import BucketList from "./components/BucketList";
 function App() {
 	return (
 		<div className="App">
-			<Header />
+			<HeaderComp />
 			<NavBar />
 			<Switch>
-				<Route path="/">
-					<Home />
-				</Route>
-				<Route path="/bucketlist">
+				<Route exact path="/bucketlist">
 					<BucketList />
+				</Route>
+				<Route exact path="/">
+					<Home />
 				</Route>
 			</Switch>
 		</div>

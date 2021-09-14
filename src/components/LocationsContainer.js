@@ -8,7 +8,7 @@ function LocationsContainer({ location }) {
 	const info = Object.values({ ...dataList[0] });
 	// console.log(location)
 	return (
-		<div className="App">
+		<div className="ui three stackable cards">
 			{info.map((item, index) => (
 				<HomeLocation key={index} place={item} pictures={pictures} />
 			))}

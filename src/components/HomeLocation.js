@@ -25,7 +25,7 @@ function HomeLocation({ place, pictures }) {
 	return (
 		<div className="ui card eight wide column cityTile">
 			<img
-				src={currentPic ? currentPic.attributes.image.medium : null}
+				src={currentPic ? currentPic.attributes.image.medium : null}  // Default Pic? or Don't render if no info/pic
 				alt=""
 			/>
 			<h3>{place.attributes.long_name}</h3>

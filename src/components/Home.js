@@ -12,12 +12,12 @@ function Home() {
 
 	useEffect(() => {
 		fetch(
-			`https://api.roadgoat.com/api/v2/destinations/auto_complete?q=la`, //${search}
+			`https://api.roadgoat.com/api/v2/destinations/auto_complete?q=${search}`, 
 			{
 				method: "GET",
 				hostname: "api.roadgoat.com",
 				port: 80,
-				path: `/api/v2/destinations/auto_complete?q=New-York`, //${search}
+				path: `/api/v2/destinations/auto_complete?q=${search}`, 
 				headers: {
 					Authorization: `Basic ${auth_key}`,
 				},
@@ -26,10 +26,10 @@ function Home() {
 		)
 			.then((resp) => resp.json())
 			.then((data) => setCity(data));
-	}, []);
-	// [search] in array dependencies for active search but API will run out quickly.  Save for presentation
+	}, [search]);
+	
 
-	// console.log(city.data)
+
 	console.log(city);
 	return (
 		<div>
