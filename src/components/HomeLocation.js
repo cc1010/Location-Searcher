@@ -1,8 +1,11 @@
 import { useRef } from "react";
 import { List, Image } from "semantic-ui-react";
+
+
+
 function HomeLocation({ place, pictures }) {
 	const collect = useRef([]);
-	const { id, type } = { ...place.relationships.featured_photo.data };
+	const { id } = { ...place.relationships.featured_photo.data }; // type is other prop
 
 	const currentPic = pictures.find((item) => id === item.id);
 
@@ -11,6 +14,7 @@ function HomeLocation({ place, pictures }) {
 	if (idFor.length > 0) {
 		const forCollection = idFor.map((item) => item.id);
 		forCollection.map((id) => {
+			return (
 			pictures.find((item) =>
 				id === item.id
 					? collect.current.push({
@@ -18,8 +22,18 @@ function HomeLocation({ place, pictures }) {
 							icon: item.attributes.icon + "-48.png",
 					  })
 					: null
-			);
-		});
+			)
+		)});
+	}
+
+	function handlePost(){
+		fetch("http://localhost:3001/places",{
+			method:"POST",
+      		headers: {
+        		"Content-Type":"application/json"
+      		},
+      		body: JSON.stringify({name : place.attributes.long_name, image : currentPic.attributes.image.medium })
+    	})
 	}
 
 	return (
@@ -33,6 +47,7 @@ function HomeLocation({ place, pictures }) {
 				Latitude :{place.attributes.latitude} | Longitude:{" "}
 				{place.attributes.longitude}
 			</p>
+			<button onClick={handlePost}>Save to Bucket List</button>
 			<List>
 				{collect.current.map((item, index) => (
 					<List.Item key={index}>
@@ -48,15 +63,3 @@ function HomeLocation({ place, pictures }) {
 }
 export default HomeLocation;
 
-// const cityData = locationData.map(city => {
-// 	return(
-// 		<div className="ui card eight wide column cityTile" key={city.id}>
-// 			<img src={cityPic} alt={city.attributes.name} />
-// 			<h3>{city.attributes.name}</h3>
-// 			<br></br>
-// 			Latitude :{city.attributes.latitude}
-// 			<br></br>
-// 			Longitude: {city.attributes.longitude}
-// 		</div>
-// 	)
-// })

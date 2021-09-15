@@ -6,7 +6,7 @@ function HeaderComp() {
     <Icon name='travel' />
     Destination Information
     <Header.Subheader>
-    Search the Globe
+    Discover the World
     </Header.Subheader>
   </Header>
   )

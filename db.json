@@ -1,0 +1,34 @@
+{
+  "places": [
+    {
+      "name": "Thailand",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/2399/medium_thailand-1459045_1920.jpg",
+      "id": 7
+    },
+    {
+      "name": "France",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/2291/medium_toa-heftiba-rMjFxuvJlEY-unsplash.jpg",
+      "id": 8
+    },
+    {
+      "name": "United Kingdom",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/2246/medium_krisztina-papp-L_9RQZq4W1U-unsplash.jpg",
+      "id": 9
+    },
+    {
+      "name": "Hungary",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/447/medium_travel-guide-of-budapest-hungary-original.jpg",
+      "id": 11
+    },
+    {
+      "name": "Netherlands",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/2430/medium_maastricht-1487273_1920.jpg",
+      "id": 12
+    },
+    {
+      "name": "New York, New York State, US",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/608/medium_travel-guide-of-new-york-ny-usa-original.jpg",
+      "id": 13
+    }
+  ]
+}

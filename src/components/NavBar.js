@@ -24,7 +24,7 @@ function NavBar() {
 			  background: "black",
 			}}
 		  >
-		  Home
+		  Search
 		</NavLink>
 		<NavLink
 			to="/bucketlist"

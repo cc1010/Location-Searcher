@@ -10,6 +10,8 @@ function Home() {
 	const [city, setCity] = useState([]);
 	const [search, setSearch] = useState("");
 
+	//json-server --watch db.json --port 3001
+
 	useEffect(() => {
 		fetch(
 			`https://api.roadgoat.com/api/v2/destinations/auto_complete?q=${search}`, 
@@ -30,10 +32,9 @@ function Home() {
 	
 
 
-	console.log(city);
+	// console.log(city)
 	return (
 		<div>
-			<h3>Home Page</h3>
 			<SearchLocations search={search} setSearch={setSearch} />
 			<LocationsContainer location={city} />
 		</div>

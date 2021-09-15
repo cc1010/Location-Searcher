@@ -19,7 +19,7 @@ code {
   float: center;
   margin: 2%;
   padding-left: 50%;
-  /* outline: #3B0B0B dotted thick; */
+  outline: #3B0B0B solid thick;
   /* transition: 0.75s; */
   /* opacity: 1; */
   margin-left: auto;
@@ -34,3 +34,14 @@ code {
   flex-direction: column; */
 }
 
+button {
+  padding: 8px 16px;
+  box-shadow:
+    0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: #8c8d9d;
+  border: 1px solid #0b0c15;
+}
+
+button:hover{
+  background-color: #2341b8;
+}
