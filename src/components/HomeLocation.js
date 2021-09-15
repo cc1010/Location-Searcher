@@ -1,10 +1,9 @@
 import { useRef } from "react";
-import { List, Image } from "semantic-ui-react";
-
-
+import { List, Image, Button } from "semantic-ui-react";
 
 function HomeLocation({ place, pictures }) {
-	const collect = useRef([]);
+	const collectKnownFor = [];
+
 	const { id } = { ...place.relationships.featured_photo.data }; // type is other prop
 
 	const currentPic = pictures.find((item) => id === item.id);
@@ -14,32 +13,38 @@ function HomeLocation({ place, pictures }) {
 	if (idFor.length > 0) {
 		const forCollection = idFor.map((item) => item.id);
 		forCollection.map((id) => {
-			return (
-			pictures.find((item) =>
+			return pictures.find((item) =>
 				id === item.id
-					? collect.current.push({
+					? collectKnownFor.push({
 							name: item.attributes.name,
 							icon: item.attributes.icon + "-48.png",
 					  })
 					: null
-			)
-		)});
+			);
+		});
 	}
 
-	function handlePost(){
-		fetch("http://localhost:3001/places",{
-			method:"POST",
-      		headers: {
-        		"Content-Type":"application/json"
-      		},
-      		body: JSON.stringify({name : place.attributes.long_name, image : currentPic.attributes.image.medium })
-    	})
+	function handlePost() {
+		fetch("http://localhost:3001/places", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				name: place.attributes.long_name,
+				image: currentPic.attributes.image.medium,
+			}),
+		});
 	}
 
 	return (
 		<div className="ui card eight wide column cityTile">
-			<img
-				src={currentPic ? currentPic.attributes.image.medium : null}  // Default Pic? or Don't render if no info/pic
+			<Image
+				src={
+					currentPic
+						? currentPic.attributes.image.medium
+						: "https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png"
+				} // Default Pic? or Don't render if no info/pic
 				alt=""
 			/>
 			<h3>{place.attributes.long_name}</h3>
@@ -49,7 +54,7 @@ function HomeLocation({ place, pictures }) {
 			</p>
 			<button onClick={handlePost}>Save to Bucket List</button>
 			<List>
-				{collect.current.map((item, index) => (
+				{collectKnownFor.map((item, index) => (
 					<List.Item key={index}>
 						<Image avatar src={item.icon} />
 						<List.Content>
@@ -62,4 +67,3 @@ function HomeLocation({ place, pictures }) {
 	);
 }
 export default HomeLocation;
-

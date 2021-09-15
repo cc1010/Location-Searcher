@@ -1,11 +1,6 @@
 {
   "places": [
     {
-      "name": "Thailand",
-      "image": "https://cdn.roadgoat.com/uploads/photo/image/2399/medium_thailand-1459045_1920.jpg",
-      "id": 7
-    },
-    {
       "name": "France",
       "image": "https://cdn.roadgoat.com/uploads/photo/image/2291/medium_toa-heftiba-rMjFxuvJlEY-unsplash.jpg",
       "id": 8
@@ -29,6 +24,11 @@
       "name": "New York, New York State, US",
       "image": "https://cdn.roadgoat.com/uploads/photo/image/608/medium_travel-guide-of-new-york-ny-usa-original.jpg",
       "id": 13
+    },
+    {
+      "name": "Papua New Guinea",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/1158/medium_travel-guide-of-independent-papua-new-guinea-original.jpg",
+      "id": 14
     }
   ]
 }
