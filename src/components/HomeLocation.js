@@ -3,6 +3,7 @@
 import { useHistory } from "react-router-dom";
 import { List, Image } from "semantic-ui-react";
 function HomeLocation({ onBucket, setOnBucket, place, pictures }) {
+	
 	const history = useHistory();
 
 	const collectKnownFor = [];
@@ -35,7 +36,9 @@ function HomeLocation({ onBucket, setOnBucket, place, pictures }) {
 			},
 			body: JSON.stringify({
 				name: place.attributes.long_name,
-				image: currentPic.attributes.image.medium,
+				image: currentPic
+				? currentPic.attributes.image.medium
+				: "https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png"
 			}),
 		});
 		setOnBucket(!onBucket)
@@ -49,8 +52,8 @@ function HomeLocation({ onBucket, setOnBucket, place, pictures }) {
 					currentPic
 						? currentPic.attributes.image.medium
 						: "https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png"
-				} // Default Pic? or Don't render if no info/pic
-				alt=""
+				} 
+				alt="Failed to Load"
 			/>
 			<h3>{place.attributes.long_name}</h3>
 			<p>

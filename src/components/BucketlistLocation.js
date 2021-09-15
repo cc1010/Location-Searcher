@@ -1,3 +1,4 @@
+import { Image } from "semantic-ui-react";
 
 function BucketlistLocation({ onDelete, name, image, id}) {
 	function handleDelete(){
@@ -8,7 +9,7 @@ function BucketlistLocation({ onDelete, name, image, id}) {
 	}
 	return (
 		<div className="ui card eight wide column cityTile">
-			<img src={image} alt={name} />
+			<Image src={image} alt="Failed to Load"  />
 			<h3>{name}</h3>
 			<button onClick={handleDelete}>Delete</button>
 		</div>
