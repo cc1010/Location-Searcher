@@ -36,6 +36,16 @@ function NavBar() {
 			>
 			Bucket List
 		</NavLink>
+		<NavLink
+			to="/map"
+			exact
+			style={linkStyles}
+			activeStyle={{
+			background: "blue",
+			}}
+			>
+			Map
+		</NavLink>
 		</div>
 	)
 }

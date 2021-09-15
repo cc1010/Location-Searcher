@@ -1,6 +1,6 @@
 import HomeLocation from "./HomeLocation";
 
-function LocationsContainer({ setOnBucket, onBucket, location }) {
+function LocationsContainer({ setOnBucket, onBucket, location, setLanLon }) {
 	console.log(location);
 
 	const dataList = Object.values(location);
@@ -10,7 +10,7 @@ function LocationsContainer({ setOnBucket, onBucket, location }) {
 	return (
 		<div className="ui three stackable cards">
 			{info.map((item, index) => (
-				<HomeLocation setOnBucket={setOnBucket} onBucket={onBucket} key={index} place={item} pictures={pictures} />
+				<HomeLocation setOnBucket={setOnBucket} onBucket={onBucket} key={index} place={item} pictures={pictures} setLanLon={setLanLon}/>
 			))}
 		</div>
 	);

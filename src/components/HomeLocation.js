@@ -2,7 +2,7 @@
 // import { List, Image, Button } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
 import { List, Image } from "semantic-ui-react";
-function HomeLocation({ onBucket, setOnBucket, place, pictures }) {
+function HomeLocation({ onBucket, setOnBucket, place, pictures, setLanLon }) {
 	
 	const history = useHistory();
 
@@ -44,7 +44,13 @@ function HomeLocation({ onBucket, setOnBucket, place, pictures }) {
 		setOnBucket(!onBucket)
 		history.push("/bucketlist")
 	}
-
+	function handleMap(){
+		setLanLon(
+			{lan: place.attributes.latitude, lon: place.attributes.longitude}
+			
+		)
+		history.push("/map")
+	}
 	return (
 		<div className="ui card eight wide column cityTile">
 			<Image
@@ -61,6 +67,7 @@ function HomeLocation({ onBucket, setOnBucket, place, pictures }) {
 				{place.attributes.longitude}
 			</p>
 			<button onClick={handlePost}>Save to Bucket List</button>
+			<button onClick={handleMap}>See in Map</button>
 			<List>
 				{collectKnownFor.map((item, index) => (
 					<List.Item key={index}>
