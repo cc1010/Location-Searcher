@@ -1,7 +1,10 @@
-import { useRef } from "react";
-import { List, Image, Button } from "semantic-ui-react";
+// import { useRef } from "react";
+// import { List, Image, Button } from "semantic-ui-react";
+import { useHistory } from "react-router-dom";
+import { List, Image } from "semantic-ui-react";
+function HomeLocation({ onBucket, setOnBucket, place, pictures }) {
+	const history = useHistory();
 
-function HomeLocation({ place, pictures }) {
 	const collectKnownFor = [];
 
 	const { id } = { ...place.relationships.featured_photo.data }; // type is other prop
@@ -35,6 +38,8 @@ function HomeLocation({ place, pictures }) {
 				image: currentPic.attributes.image.medium,
 			}),
 		});
+		setOnBucket(!onBucket)
+		history.push("/bucketlist")
 	}
 
 	return (

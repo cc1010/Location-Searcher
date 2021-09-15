@@ -6,7 +6,7 @@ import "follow-redirects";
 import "fs";
 import { useEffect, useState } from "react";
 ///
-function Home() {
+function Home({setOnBucket, onBucket }) {
 	const [city, setCity] = useState([]);
 	const [search, setSearch] = useState("");
 
@@ -36,7 +36,7 @@ function Home() {
 	return (
 		<div>
 			<SearchLocations search={search} setSearch={setSearch} />
-			<LocationsContainer location={city} />
+			<LocationsContainer onBucket={onBucket} setOnBucket={setOnBucket}  location={city} />
 		</div>
 	);
 }

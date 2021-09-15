@@ -5,7 +5,7 @@ const linkStyles = {
   width: "100px",
   padding: "5px",
   margin: "0 6px 6px",
-  background: "blue",
+  background: "black",
   textDecoration: "none",
   color: "white",
 };
@@ -21,7 +21,7 @@ function NavBar() {
 			style={linkStyles}
 			/* add prop for activeStyle */
 			activeStyle={{
-			  background: "black",
+			  background: "blue",
 			}}
 		  >
 		  Search
@@ -31,7 +31,7 @@ function NavBar() {
 			exact
 			style={linkStyles}
 			activeStyle={{
-			background: "black",
+			background: "blue",
 			}}
 			>
 			Bucket List
