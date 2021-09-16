@@ -1,7 +1,6 @@
-// import { useRef } from "react";
-// import { List, Image, Button } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
 import { List, Image } from "semantic-ui-react";
+
 function HomeLocation({ onBucket, setOnBucket, place, pictures, setLanLon }) {
 	
 	const history = useHistory();

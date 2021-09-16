@@ -1,16 +1,16 @@
 import SearchLocations from "./SearchLocations";
 import LocationsContainer from "./LocationsContainer";
-// API
+
 import auth_key from "../config";
 import "follow-redirects";
 import "fs";
 import { useEffect, useState } from "react";
-///
+
 function Home({setOnBucket, onBucket, setLanLon }) {
 	const [city, setCity] = useState([]);
 	const [search, setSearch] = useState("");
 
-	//json-server --watch db.json --port 3001
+	
 
 	useEffect(() => {
 		fetch(
@@ -30,9 +30,9 @@ function Home({setOnBucket, onBucket, setLanLon }) {
 			.then((data) => setCity(data));
 	}, [search]);
 	
+// console.log(city)
 
 
-	// console.log(city)
 	return (
 		<div>
 			<SearchLocations search={search} setSearch={setSearch} />

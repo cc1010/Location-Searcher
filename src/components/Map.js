@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import API_Map from '../config1'
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 mapboxgl.accessToken = API_Map;
 
@@ -12,6 +13,10 @@ export default function Map({latLon}) {
     const [lat, setLat] = useState(latLon.lan);
     const [zoom, setZoom] = useState(9);
 
+    console.log(lat,lng)
+   
+   
+
     useEffect(() => {
         if (map.current) return; // initialize map only once
 
@@ -19,9 +24,11 @@ export default function Map({latLon}) {
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [lng, lat],
-        zoom: zoom
+        zoom: zoom,
+        scrollZoom : false // disable scroll zoom (dblclick:zoom||shift+dblclick:unzoom)
             });
         });
+       
 
         useEffect(() => {
             if (!map.current) return; // wait for map to initialize
@@ -31,17 +38,13 @@ export default function Map({latLon}) {
               setZoom(map.current.getZoom().toFixed(3));
             });
           });
-
-    return (
-        <div>
-            <div ref={mapContainer} className="map-container" />
-                <div>
-                    <div className="sidebar">
-                        Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-                    </div>
+          
+          return (
+            <div>
+                <div className="sidebar">
+                    Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+                </div>
                 <div ref={mapContainer} className="map-container" />
             </div>
-        </div>
-        
-    );
+            );
 }

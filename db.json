@@ -1,11 +1,6 @@
 {
   "places": [
     {
-      "name": "France",
-      "image": "https://cdn.roadgoat.com/uploads/photo/image/2291/medium_toa-heftiba-rMjFxuvJlEY-unsplash.jpg",
-      "id": 8
-    },
-    {
       "name": "United Kingdom",
       "image": "https://cdn.roadgoat.com/uploads/photo/image/2246/medium_krisztina-papp-L_9RQZq4W1U-unsplash.jpg",
       "id": 9
@@ -16,9 +11,24 @@
       "id": 10
     },
     {
-      "name": "Foshan, China",
-      "image": "https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png",
+      "name": "Golfo Paradiso",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/1735/medium_24304219028_27bcbbd58f_o.jpg",
       "id": 11
+    },
+    {
+      "name": "Antarctica",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/1280/medium_travel-guide-of-heard-island-and-mcdonald-islands-australia-original.jpg",
+      "id": 12
+    },
+    {
+      "name": "South America",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/2419/medium_pisac-4047008_1920.jpg",
+      "id": 13
+    },
+    {
+      "name": "Qatar",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/1744/medium_12986039643_6cfa0cd18e_o.jpg",
+      "id": 14
     }
   ]
 }

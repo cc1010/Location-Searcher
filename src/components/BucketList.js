@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BucketListContainer from "./BucketListContainer"
 import BucketListFilter from "./BucketListFilter";
-
+//json-server --watch db.json --port 3001
 
 function BucketList() {
 	const [filter, setFilter] = useState("")
