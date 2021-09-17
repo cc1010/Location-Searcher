@@ -49,8 +49,7 @@ button:hover{
 }
 
 .map-container {
-  margin-top: 0px;
-  height: 800px; 
+  height: 550px; 
   
   }
    
@@ -61,7 +60,7 @@ button:hover{
   font-family: monospace;
   z-index: 1;
   position: absolute;
-  top: 0;
+  top: 180px;
   left: 0;
   margin: 12px;
   border-radius: 4px;

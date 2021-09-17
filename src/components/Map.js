@@ -6,6 +6,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 mapboxgl.accessToken = API_Map;
 
+
+
+
+
 export default function Map({latLon}) {
     const mapContainer = useRef(null);
     const map = useRef(null);
@@ -19,25 +23,23 @@ export default function Map({latLon}) {
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
-
         map.current = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [lng, lat],
-        zoom: zoom,
-        scrollZoom : false // disable scroll zoom (dblclick:zoom||shift+dblclick:unzoom)
-            });
+        zoom: zoom
         });
+        });
+        
        
-
         useEffect(() => {
             if (!map.current) return; // wait for map to initialize
             map.current.on('move', () => {
-              setLng(map.current.getCenter().lng.toFixed(3));
-              setLat(map.current.getCenter().lat.toFixed(3));
-              setZoom(map.current.getZoom().toFixed(3));
+            setLng(map.current.getCenter().lng.toFixed(4));
+            setLat(map.current.getCenter().lat.toFixed(4));
+            setZoom(map.current.getZoom().toFixed(2));
             });
-          });
+            });
           
           return (
             <div>
