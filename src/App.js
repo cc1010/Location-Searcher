@@ -18,7 +18,7 @@ function App() {
 			<NavBar />
 			<Switch>
 				<Route exact path="/bucketlist">
-					<BucketList  />
+					<BucketList  setLanLon={setLanLon}/>
 				</Route>
 				<Route exact path="/map">
 					<Map latLon={latLon}  />

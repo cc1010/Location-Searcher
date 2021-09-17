@@ -3,7 +3,7 @@ import BucketListContainer from "./BucketListContainer"
 import BucketListFilter from "./BucketListFilter";
 //json-server --watch db.json --port 3001
 
-function BucketList() {
+function BucketList({setLanLon}) {
 	const [filter, setFilter] = useState("")
 	const [bucket, setBucket] = useState([])
 
@@ -24,7 +24,7 @@ function BucketList() {
 	return (
 		<div>
 			<BucketListFilter filter={filter} setFilter={setFilter} />
-			<BucketListContainer onDelete={deletePlace} bucketPlace={filteredList}  />
+			<BucketListContainer onDelete={deletePlace} bucketPlace={filteredList} setLanLon={setLanLon} />
 		</div>
 	);
 }

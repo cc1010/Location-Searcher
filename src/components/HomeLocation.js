@@ -37,7 +37,9 @@ function HomeLocation({ onBucket, setOnBucket, place, pictures, setLanLon }) {
 				name: place.attributes.long_name,
 				image: currentPic
 				? currentPic.attributes.image.medium
-				: "https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png"
+				: "https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png",
+				lan: place.attributes.latitude, 
+				lon: place.attributes.longitude
 			}),
 		});
 		setOnBucket(!onBucket)
