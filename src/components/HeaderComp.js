@@ -4,7 +4,7 @@ function HeaderComp() {
 	return (
 	<Header as='h2' icon>
     <Icon name='travel' />
-    Destination Information
+    Destination
     <Header.Subheader>
     Discover the World
     </Header.Subheader>

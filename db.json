@@ -1,18 +1,46 @@
 {
   "places": [
     {
-      "name": "Kent, Ohio, US",
-      "image": "https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_960_720.png",
-      "lan": 41.15367,
-      "lon": -81.35789,
-      "id": 1
-    },
-    {
       "name": "Papua New Guinea",
       "image": "https://cdn.roadgoat.com/uploads/photo/image/1158/medium_travel-guide-of-independent-papua-new-guinea-original.jpg",
       "lan": -6,
       "lon": 147,
       "id": 2
+    },
+    {
+      "name": "Hawaii, United States",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/2316/medium_jeremy-bishop-uUMcDSIqZSU-unsplash.jpg",
+      "lan": 20.75028,
+      "lon": -156.50028,
+      "id": 3
+    },
+    {
+      "name": "Warsaw, Poland",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/1953/medium_adam-niescioruk-sTNAU3mY9qk-unsplash.jpg",
+      "lan": 52.22977,
+      "lon": 21.01178,
+      "id": 4
+    },
+    {
+      "name": "Rio de Janeiro, Brazil",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/426/medium_travel-guide-of-rio-de-janeiro-brazil-original.jpg",
+      "lan": -22.90278,
+      "lon": -43.2075,
+      "id": 6
+    },
+    {
+      "name": "United Kingdom",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/2246/medium_krisztina-papp-L_9RQZq4W1U-unsplash.jpg",
+      "lan": 54.75844,
+      "lon": -2.69531,
+      "id": 7
+    },
+    {
+      "name": "Honduras",
+      "image": "https://cdn.roadgoat.com/uploads/photo/image/2286/medium_angello-lopez-obDMqhUIISU-unsplash.jpg",
+      "lan": 15,
+      "lon": -86.5,
+      "id": 8
     }
   ]
 }
